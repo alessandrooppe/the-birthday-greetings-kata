@@ -1,0 +1,72 @@
+[
+    {
+        "lastName": "Doe",
+        "firstName": "John",
+        "dateOfBirth": "1982-06-28",
+        "email": "john.doe@foobar.com",
+        "gender": 2
+    },
+    {
+        "lastName": "Ann",
+        "firstName": "Mary",
+        "dateOfBirth": "1975-09-11",
+        "email": "mary.ann@foobar.com",
+        "gender": 3
+    },
+    {
+        "lastName": "Smith",
+        "firstName": "Jane",
+        "dateOfBirth": "1990-06-15",
+        "email": "jane.smith@foobar.com",
+        "gender": 3
+    },
+    {
+        "lastName": "Brown",
+        "firstName": "James",
+        "dateOfBirth": "1985-12-25",
+        "email": "james.brown@foobar.com",
+        "gender": 2
+    },
+    {
+        "lastName": "Johnson",
+        "firstName": "Emily",
+        "dateOfBirth": "1992-03-30",
+        "email": "emily.johnson@foobar.com",
+        "gender": 3
+    },
+    {
+        "lastName": "Williams",
+        "firstName": "Michael",
+        "dateOfBirth": "1988-07-19",
+        "email": "michael.williams@foobar.com",
+        "gender": 2
+    },
+    {
+        "lastName": "Jones",
+        "firstName": "Sarah",
+        "dateOfBirth": "1991-01-05",
+        "email": "sarah.jones@foobar.com",
+        "gender": 3
+    },
+    {
+        "lastName": "Garcia",
+        "firstName": "David",
+        "dateOfBirth": "1987-11-22",
+        "email": "david.garcia@foobar.com",
+        "gender": 2
+    },
+    {
+        "lastName": "Martinez",
+        "firstName": "Laura",
+        "dateOfBirth": "1983-04-10",
+        "email": "laura.martinez@foobar.com",
+        "gender": 3
+    },
+    {
+        "lastName": "Hernandez",
+        "firstName": "Robert",
+        "dateOfBirth": "1995-02-14",
+        "email": "robert.hernandez@foobar.com",
+        "gender": 2
+    }
+]
