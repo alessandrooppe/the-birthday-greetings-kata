@@ -72,6 +72,7 @@
     {
         "lastName": "Carlos",
         "firstName": "Alberto",
+        "dateOfBirth": "1995-03-29",
         "email": "carlos.alberto@oppe.com",
         "gender": 2
     }

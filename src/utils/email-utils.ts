@@ -1,0 +1,21 @@
+import { Employee } from "../models/employee";
+import { Gender } from "../models/enum/gender";
+
+export function formatBodyForBirthdayEmail(employee: Employee): string {
+    let dear = 'Caro';
+    switch (employee.gender) {
+        case Gender.M:
+        dear = 'Caro';
+        break;
+        case Gender.F:   
+        dear = 'Cara';
+        break; 
+        case Gender.Altro: 
+        dear = 'Car*';
+        break;   
+        default:
+        dear = 'Caro';
+    }
+
+    return`Buon compleanno! ${dear} ${employee.firstName} ${employee.lastName}, oggi è il tuo compleanno! Auguri!`;
+}

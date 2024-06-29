@@ -1,20 +1,26 @@
 import { Employee } from "./models/employee";
-import { sendEmail } from "./service/email-service";
-import { getEmployees } from "./service/employees-service";
+import { sendEmails } from "./service/email-service";
+import { getEmployeesByJson } from "./service/employees-service";
+import * as path from 'path';
 
-console.log('Is this working?');
+export function checkBirthday() {
+  let employees: Employee[] = [];
 
-let employees: Employee[] = [];
-
-try{
-    employees = getEmployees('/Users/alessandrooppedisano/Documents/GitHub/the-birthday-greetings-kata/src/employees.json');
+  try{
+    const filePath = path.resolve(__dirname, 'employees.json');
+    employees = getEmployeesByJson(filePath);
     const today = new Date();   
-    const  employeesWithBirthday = employees.filter(employee => employee.isBirthday(today));
-    
-    sendEmail(employeesWithBirthday);
-
-} catch (error: any) {
-    console.error(error.message);
+    const employeesWithBirthday = employees.filter(employee => employee.isBirthday(today));
+    if(employeesWithBirthday.length > 0)
+      sendEmails(employeesWithBirthday);
+    else
+      console.log('No birthdays today');
+  
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-
+console.log('Start...');
+checkBirthday()
+console.log('Finish...');
