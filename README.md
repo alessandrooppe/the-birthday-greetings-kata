@@ -26,8 +26,15 @@ Per installare le dipendenze del progetto, eseguire il seguente comando:
 
 ```bash
 yarn install
+```
 
-yarn dev
+Per avviare i test:
 
+```bash
+yarn test
+```
+
+Per avviare il progetto:
+```bash
 yarn start
-
+```
