@@ -1,14 +1,14 @@
 # Birthday Greetings Kata
 
-Questo progetto è una soluzione al "Birthday Greetings Kata" descritto qua [blog post](https://matteo.vaccari.name/blog/archives/154). L'obiettivo è creare un programma che invii email di auguri di compleanno agli impiegati.
+Questo progetto è una soluzione al "Birthday Greetings Kata" descritto in questo [blog post](https://matteo.vaccari.name/blog/archives/154). L'obiettivo è creare un programma che invii email di auguri di compleanno agli impiegati.
 
 ## Descrizione del Progetto
 
-Il progetto carica i dati degli impiegati da un file JSON e invia email di auguri a coloro il cui compleanno è oggi. La struttura del progetto è stata realizzata seguendo i principi di iniezione di dipendenze e separazione delle responsabilità, con una chiara distinzione tra la logica di business e l'infrastruttura. 
+Il progetto carica i dati degli impiegati da un file JSON o CSVe invia email di auguri a coloro il cui compleanno è oggi. La struttura del progetto è stata realizzata seguendo i principi di iniezione di dipendenze e separazione delle responsabilità, con una chiara distinzione tra la logica di business e l'infrastruttura. 
 
 ### Funzionalità Principali
 
-- Caricamento dei dati degli impiegati da un file JSON.
+- Caricamento dei dati degli impiegati da un file JSON o CSV.
 - Invio di email di auguri di compleanno. L'invio al momento è simulato con console.log()
 - Gestione dei compleanni il 29 febbraio.
 
@@ -18,7 +18,8 @@ Il progetto è strutturato per essere modulare e testabile. I principali compone
 
 - **Models:** Definiscono la struttura dei dati utilizzati.
 - **Service:** Contengono la logica di business per la gestione degli impiegati e l'invio delle email.
-- **Utils:** Funzioni di supporto per la gestione delle date e delle email.
+- **Utils:** Funzioni di supporto per la gestione delle date, della validazione e delle email.
+- **Repository** Contengono la logica per ricavare i dati degli impiegati
 
 ## Installazione
 
