@@ -1,6 +1,9 @@
 import { Employee } from "../models/employee";
 import { Gender } from "../models/enum/gender";
 
+/*
+* Formatta il body di auguri di compleanno.
+*/ 
 export function formatBodyForBirthdayEmail(employee: Employee): string {
     let dear: string;    
     switch (employee.gender) {

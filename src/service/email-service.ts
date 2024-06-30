@@ -7,6 +7,10 @@ import { getEmployeesFromCsv, getEmployeesFromJson } from "../repository/employe
 
 export class EmailService {
 
+
+  /*
+  * Invia email di auguri di compleanno agli impiegati il cui compleanno è oggi.
+  */ 
   async sendEmailsForBirthDayToEmployess(config: Config, senderEmail: string): Promise<void> {
   
     let employees: Employee[] = [];

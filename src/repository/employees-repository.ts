@@ -9,7 +9,7 @@ import { mapGender, validateEmployee } from "../utils/validate-utils";
  * Legge un file JSON contenente dati degli impiegati e li restituisce come array di Employee.
  */
 export async function getEmployeesFromJson(filePath: string): Promise<Employee[]> {
-  console.log('Lettura impiegati...');
+  console.log('Lettura impiegati da JSON...');
   
   try {
     const data = fs.readFileSync(filePath, 'utf8');
