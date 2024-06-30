@@ -15,5 +15,5 @@ export async function checkBirthday(config: Config = "json") {
 }
 
 console.log('Start...');
-checkBirthday("csv")
+checkBirthday("json");
 console.log('Finish...');

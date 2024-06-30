@@ -1,7 +1,8 @@
 import path from "path";
 import { Employee } from "../src/models/employee";
 import { Gender } from "../src/models/enum/gender";
-import { getEmployeesFromJson, getEmployeesFromCsv, validateEmployee } from "../src/repository/employees-repository";
+import { getEmployeesFromCsv, getEmployeesFromJson  } from "../src/repository/employees-repository";
+import { validateEmployee } from "../src/utils/validate-utils";
 
 describe('Employees', () => {
     test('confirm the constructor of employee', () => {
@@ -18,15 +19,21 @@ describe('Employees', () => {
         expect(employee).toEqual(employeeTest);
     });
 
-    test('confirm the extract json of employee', () => {
-        const filePath = path.resolve(__dirname, 'employees.json');
-        const employees = getEmployeesFromJson(filePath);
+    test('confirm the extract json of employee', async () => {
+        const filePath = path.resolve(__dirname, 'employees-mock.json');
+        const employees = await getEmployeesFromJson(filePath);
         
         expect(employees).toContain;
     }); 
 
+    test('confirm the extract csv of employee', async () => {
+        const filePath = path.resolve(__dirname, 'employees-mock.csv');
+        const employees = await getEmployeesFromCsv(filePath);
+        
+        expect(employees).toContain;
+    }); 
 
-    it('should return true for a valid employee object', () => {
+    test('should return true for a valid employee object', () => {
         const validEmployee = {
           lastName: 'Rossi',
           firstName: 'Mario',
@@ -37,7 +44,7 @@ describe('Employees', () => {
         expect(validateEmployee(validEmployee)).toBe(true);
     });
 
-    it('should return false for an employee with invalid gender', () => {
+    test('should return false for an employee with invalid gender', () => {
     const invalidGenderEmployee = {
         lastName: 'Rossi',
         firstName: 'Mario',
@@ -48,7 +55,7 @@ describe('Employees', () => {
     expect(validateEmployee(invalidGenderEmployee)).toBe(false);
     });
 
-    it('should return false for an employee with missing or invalid fields', () => {
+    test('should return false for an employee with missing or invalid fields', () => {
     const invalidFieldsEmployee = {
         lastName: 'Rossi',
         firstName: 'Mario',
@@ -59,7 +66,7 @@ describe('Employees', () => {
     expect(validateEmployee(invalidFieldsEmployee)).toBe(false);
     });
 
-    it('should return false for an employee with incorrect data types', () => {
+    test('should return false for an employee with incorrect data types', () => {
     const incorrectTypesEmployee = {
         lastName: 123,
         firstName: 'Mario',
