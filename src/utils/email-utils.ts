@@ -2,7 +2,7 @@ import { Employee } from "../models/employee";
 import { Gender } from "../models/enum/gender";
 
 export function formatBodyForBirthdayEmail(employee: Employee): string {
-    let dear = 'Caro';
+    let dear: string;    
     switch (employee.gender) {
         case Gender.M:
         dear = 'Caro';
@@ -17,5 +17,5 @@ export function formatBodyForBirthdayEmail(employee: Employee): string {
         dear = 'Caro';
     }
 
-    return`Buon compleanno! ${dear} ${employee.firstName} ${employee.lastName}, oggi è il tuo compleanno! Auguri!`;
+    return`${dear} ${employee.firstName} ${employee.lastName}, oggi è il tuo compleanno! Auguri!`;
 }

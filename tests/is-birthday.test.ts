@@ -1,7 +1,7 @@
 import { Employee } from "../src/models/employee";
 import { Gender } from "../src/models/enum/gender";
 
-describe('getEmployees', () => {
+describe('isBirthday', () => {
     test('should confirm today is birthday of employee', () => {
 
         const today = new Date();

@@ -8,7 +8,7 @@ describe('Email', () => {
         const employee: Employee = new Employee('Doe', 'John',  "1975-09-11", '?', Gender.M);
         const message = formatBodyForBirthdayEmail(employee);
         
-        expect(message).toEqual("Buon compleanno! Caro John Doe, oggi è il tuo compleanno! Auguri!");
+        expect(message).toEqual("Caro John Doe, oggi è il tuo compleanno! Auguri!");
     });
 
 });

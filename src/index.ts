@@ -1,26 +1,19 @@
-import { Employee } from "./models/employee";
-import { sendEmails } from "./service/email-service";
-import { getEmployeesByJson } from "./service/employees-service";
-import * as path from 'path';
+import { EmailService } from "./service/email-service";
 
-export function checkBirthday() {
-  let employees: Employee[] = [];
+export type Config = "json" | "csv";
 
+export async function checkBirthday(config: Config = "json") {
+ 
   try{
-    const filePath = path.resolve(__dirname, 'employees.json');
-    employees = getEmployeesByJson(filePath);
-    const today = new Date();   
-    const employeesWithBirthday = employees.filter(employee => employee.isBirthday(today));
-    if(employeesWithBirthday.length > 0)
-      sendEmails(employeesWithBirthday);
-    else
-      console.log('No birthdays today');
-  
+    
+    var emailService = new EmailService();
+    await emailService.sendEmailsForBirthDayToEmployess(config, "company@oppe.com");
+
   } catch (error) {
     console.error(error);
   }
 }
 
 console.log('Start...');
-checkBirthday()
+checkBirthday("csv")
 console.log('Finish...');
